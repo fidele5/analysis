@@ -25,6 +25,13 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="/plugins/table/datatable/dt-global_style.css">
 
+    <link href="/plugins/animate/animate.css" rel="stylesheet" type="text/css" />
+    <script src="/plugins/sweetalerts/promise-polyfill.js"></script>
+    <link href="/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <link href="/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="/plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body class="alt-menu sidebar-noneoverflow">
     <!-- BEGIN LOADER -->
@@ -56,13 +63,13 @@
             <ul class="navbar-item flex-row nav-dropdowns">
                 <li class="nav-item dropdown language-dropdown more-dropdown">
                     <div class="dropdown custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/ca.png" class="flag-width" alt="flag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/assets/img/ca.png" class="flag-width" alt="flag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right animated fadeInUp" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-img-value="de" data-value="de" href="javascript:void(0);"><img src="assets/img/de.png" class="flag-width" alt="flag"> German</a>
-                            <a class="dropdown-item" data-img-value="jp" data-value="jp" href="javascript:void(0);"><img src="assets/img/jp.png" class="flag-width" alt="flag"> Japanese</a>
-                            <a class="dropdown-item" data-img-value="fr" data-value="fr" href="javascript:void(0);"><img src="assets/img/fr.png" class="flag-width" alt="flag"> French</a>
-                            <a class="dropdown-item" data-img-value="ca" data-value="en" href="javascript:void(0);"><img src="assets/img/ca.png" class="flag-width" alt="flag"> English</a>
+                            <a class="dropdown-item" data-img-value="de" data-value="de" href="javascript:void(0);"><img src="/assets/img/de.png" class="flag-width" alt="flag"> German</a>
+                            <a class="dropdown-item" data-img-value="jp" data-value="jp" href="javascript:void(0);"><img src="/assets/img/jp.png" class="flag-width" alt="flag"> Japanese</a>
+                            <a class="dropdown-item" data-img-value="fr" data-value="fr" href="javascript:void(0);"><img src="/assets/img/fr.png" class="flag-width" alt="flag"> French</a>
+                            <a class="dropdown-item" data-img-value="ca" data-value="en" href="javascript:void(0);"><img src="/assets/img/ca.png" class="flag-width" alt="flag"> English</a>
                         </div>
                     </div>
                 </li>

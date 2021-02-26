@@ -36,6 +36,9 @@
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="/plugins/table/datatable/datatables.js"></script>
     <script src="/plugins/table/datatable/custom_miscellaneous.js"></script>
+    <script src="/plugins/sweetalerts/sweetalert2.min.js"></script>
+    <script src="/plugins/sweetalerts/custom-sweetalert.js"></script>
+    <script src="/assets/js/ajax.actions.js"></script>
     <script>
         $('#multi-column-ordering').DataTable({
             "oLanguage": {
@@ -61,5 +64,12 @@
 	    });
     </script>
     <!-- END PAGE LEVEL SCRIPTS -->
+     <!-- toastr -->
+    <script src="/plugins/notification/snackbar/snackbar.min.js"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+    <script src="/assets/js/components/notification/custom-snackbar.js"></script>
+    <!--  END CUSTOM SCRIPTS FILE  -->
 </body>
 </html>

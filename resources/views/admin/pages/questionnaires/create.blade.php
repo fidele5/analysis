@@ -16,7 +16,7 @@
                                         <div class="form-group row mb-4">
                                             <label for="hEmail" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Designation</label>
                                             <div class="col-xl-8 col-lg-6 col-sm-8">
-                                                <input type="text" class="form-control" name="designation" id="hEmail" placeholder="Designation">
+                                                <input type="text" class="form-control champ" name="designation" id="hEmail" placeholder="Designation">
                                             </div>
                                         </div>
                                         <div class="form-group row">

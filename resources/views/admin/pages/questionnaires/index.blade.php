@@ -26,11 +26,11 @@
                                                         <div class="usr-img-frame mr-2 rounded-circle">
                                                             <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
                                                         </div>
-                                                        <p class="align-self-center mb-0 admin-name"> Tiger </p>
+                                                        <p class="align-self-center mb-0 admin-name"> {{ $questionnaire->user->name }} </p>
                                                     </div>
                                                 </td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
+                                                <td>{{ $questionnaire->designation }}</td>
+                                                <td>{{ count($questionnaire->questions) }}</td>
                                                 <td>61</td>
                                                 <td>2011/04/25</td>
                                                 <td class="text-center">
@@ -40,7 +40,7 @@
                                                         </a>
 
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                            <a class="dropdown-item" href="{{ route("questionnaire.show") }}">View</a>
+                                                            <a class="dropdown-item" href="{{ route("questionnaire.show", $questionnaire->id) }}">View</a>
                                                             <a class="dropdown-item" href="{{ route("questionnaire.edit", $questionnaire->id) }}">Edit</a>
                                                             <a class="dropdown-item" href="javascript:void(0);">Delete</a>
                                                         </div>

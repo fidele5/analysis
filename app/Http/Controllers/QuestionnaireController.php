@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Questionnaire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionnaireController extends Controller
 {
@@ -36,7 +37,14 @@ class QuestionnaireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Questionnaire::create([
+            "designation"=>$request->designation,
+            "user_id"=>Auth::user()->id,
+        ]);
+
+        return response()->json([
+            "status"=>"success", "back"=>"questionnaire"
+        ]);
     }
 
     /**
