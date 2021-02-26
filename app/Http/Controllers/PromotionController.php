@@ -14,7 +14,8 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        //
+        $promotions = Promotion::all();
+        return view("admin.pages.promotions.index")->with("promotions", $promotions);
     }
 
     /**

@@ -21,6 +21,7 @@
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
     <link rel="stylesheet" type="text/css" href="/plugins/table/datatable/datatables.css">
+    <link rel="stylesheet" type="text/css" href="/plugins/table/datatable/custom_dt_miscellaneous.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="/plugins/table/datatable/dt-global_style.css">
 

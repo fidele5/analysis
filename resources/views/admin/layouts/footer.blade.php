@@ -35,6 +35,7 @@
 
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="/plugins/table/datatable/datatables.js"></script>
+    <script src="/plugins/table/datatable/custom_miscellaneous.js"></script>
     <script>
         $('#multi-column-ordering').DataTable({
             "oLanguage": {

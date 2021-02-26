@@ -14,7 +14,8 @@ class RubriqueController extends Controller
      */
     public function index()
     {
-        //
+        $rubriques = Rubrique::all();
+        return view("admin.pages.rubriques.index")->with("rubriques", $rubriques);
     }
 
     /**

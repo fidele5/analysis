@@ -8,24 +8,19 @@
                                     <thead>
                                         <tr>
                                             <th>id</th>
-                                            <th>Enonce</th>
-                                            <th>Question</th>
+                                            <th>texte</th>
+                                            <th>question</th>
+                                            <th>user</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($assertions as $assertion)
+                                        @foreach ($reponses as $reponse)
                                             <tr>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <div class="usr-img-frame mr-2 rounded-circle">
-                                                            <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
-                                                        </div>
-                                                        <p class="align-self-center mb-0 admin-name"> Tiger </p>
-                                                    </div>
-                                                </td>
-                                                <td>System Architect</td>
-                                                <td>System Architect</td>
+                                                <td>{{ $reponse->id }}</td>
+                                                <td>{{ $reponse->text }}</td>
+                                                <td>{{ $reponse->question->enonce }}</td>
+                                                <td>{{ $reponse->user->name }}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -46,8 +41,9 @@
                                     <tfoot>
                                         <tr>
                                             <th>id</th>
-                                            <th>Enonce</th>
-                                            <th>Question</th>
+                                            <th>texte</th>
+                                            <th>question</th>
+                                            <th>user</th>
                                             <th>Actions</th>
                                         </tr>
                                     </tfoot>

@@ -8,24 +8,15 @@
                                     <thead>
                                         <tr>
                                             <th>id</th>
-                                            <th>Enonce</th>
-                                            <th>Question</th>
+                                            <th>designation</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($assertions as $assertion)
+                                        @foreach ($rubriques as $rubrique)
                                             <tr>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <div class="usr-img-frame mr-2 rounded-circle">
-                                                            <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
-                                                        </div>
-                                                        <p class="align-self-center mb-0 admin-name"> Tiger </p>
-                                                    </div>
-                                                </td>
-                                                <td>System Architect</td>
-                                                <td>System Architect</td>
+                                                <td>{{ $rubrique->id }}</td>
+                                                <td>{{ $rubrique->designation }}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -46,8 +37,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>id</th>
-                                            <th>Enonce</th>
-                                            <th>Question</th>
+                                            <th>designation</th>
                                             <th>Actions</th>
                                         </tr>
                                     </tfoot>

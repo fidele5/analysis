@@ -1,35 +1,26 @@
-@extends('guest.layouts.layout')
+@extends('admin.layouts.layout')
 @section('content')
                 <div class="row layout-top-spacing" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
                             <div class="table-responsive mb-4 mt-4">
-                                <table id="multi-column-ordering" class="table table-hover" style="width:100%">
+                                <table id="column-filter" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>id</th>
-                                            <th>Enonce</th>
-                                            <th>Questionnaire</th>
-                                            <th>Rubrique</th>
-                                            <th>Reponses</th>
+                                            <th>designation</th>
+                                            <th>annee</th>
+                                            <th>filiere</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($questions as $question)
+                                        @foreach ($promotions as $promotion)
                                             <tr>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <div class="usr-img-frame mr-2 rounded-circle">
-                                                            <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
-                                                        </div>
-                                                        <p class="align-self-center mb-0 admin-name"> Tiger </p>
-                                                    </div>
-                                                </td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
+                                                <td>{{ $promotion->id }}</td>
+                                                <td>{{ $promotion->designation }}</td>
+                                                <td>{{ $promotion->annee }}</td>
+                                                <td>{{ $promotion->filiere->nom }}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -50,10 +41,9 @@
                                     <tfoot>
                                         <tr>
                                             <th>id</th>
-                                            <th>Enonce</th>
-                                            <th>Questionnaire</th>
-                                            <th>Rubrique</th>
-                                            <th>Reponses</th>
+                                            <th>designation</th>
+                                            <th>annee</th>
+                                            <th>filiere</th>
                                             <th>Actions</th>
                                         </tr>
                                     </tfoot>
