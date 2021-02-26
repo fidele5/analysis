@@ -10,7 +10,7 @@ class Question extends Model
     use HasFactory;
 
     protected $fillable = [
-        'ennonce', 'questionnaire_id', 'rubrique_id',
+        'enonce', 'questionnaire_id', 'rubrique_id',
     ];
 
     public function rubrique()
@@ -21,6 +21,10 @@ class Question extends Model
     public function reponses()
     {
         return $this->hasMany('App\Models\Reponse');
+    }
+
+    public function questionnaire(){
+        return $this->belongsTo("App\Models\Questionnaire");
     }
 
     public function assertions()

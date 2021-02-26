@@ -25,7 +25,7 @@ class FiliereController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.pages.filieres.create");
     }
 
     /**
@@ -36,7 +36,11 @@ class FiliereController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Filiere::create($request->except("_token"));
+        return response()->json([
+            "status" => "success", "back" => "filiere",
+        ]);
+
     }
 
     /**
@@ -47,7 +51,7 @@ class FiliereController extends Controller
      */
     public function show(Filiere $filiere)
     {
-        //
+        return view("admin.pages.filieres.show")->with("filiere", $filiere);
     }
 
     /**
@@ -58,7 +62,7 @@ class FiliereController extends Controller
      */
     public function edit(Filiere $filiere)
     {
-        //
+        return view("admin.pages.filieres.edit")->with("filiere", $filiere);
     }
 
     /**
@@ -70,7 +74,10 @@ class FiliereController extends Controller
      */
     public function update(Request $request, Filiere $filiere)
     {
-        //
+        $filiere->update($request->except("_token"));
+        return response()->json([
+            "status" => "success", "back" => "filiere",
+        ]);
     }
 
     /**

@@ -21,18 +21,11 @@
                                     <tbody>
                                         @foreach ($questions as $question)
                                             <tr>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <div class="usr-img-frame mr-2 rounded-circle">
-                                                            <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
-                                                        </div>
-                                                        <p class="align-self-center mb-0 admin-name"> Tiger </p>
-                                                    </div>
-                                                </td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
+                                                <td>{{ $question->id }}</td>
+                                                <td class="text-truncate" style="max-width: 100px;">{{ $question->enonce }}</td>
+                                                <td>{{ $question->questionnaire->designation }}</td>
+                                                <td>{{ $question->rubrique->designation }}</td>
+                                                <td>{{ count($question->reponses) }}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -40,10 +33,10 @@
                                                         </a>
 
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                            <a class="dropdown-item" href="javascript:void(0);">View</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="{{ route("question.show", $question->id) }}">View</a>
+                                                            <a class="dropdown-item" href="{{ route("question.edit", $question->id) }}">Edit</a>
                                                             <a class="dropdown-item" href="javascript:void(0);">View Response</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                            <a class="dropdown-item delete" methpd="DELETE" token="{{ csrf_token() }}" href="{{ route("question.destroy", $question->id) }}">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>

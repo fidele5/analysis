@@ -3,6 +3,9 @@
                 <div class="row layout-top-spacing" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
+                            <div class="text-center">
+                                <a href="{{ route("filiere.create") }}" class="btn btn-outline-primary mb-2">Ajouter</a>
+                            </div>
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="column-filter" class="table table-hover" style="width:100%">
                                     <thead>

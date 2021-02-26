@@ -11,7 +11,7 @@
                                     </div>
                                 </div>
                                 <div class="widget-content widget-content-area">
-                                    <form method="POST" action="{{ route("questionnaire.store") }}">
+                                    <form method="POST" action="{{ route("question.store") }}">
                                         @csrf
 
                                         <div class="form-group row mb-4">
