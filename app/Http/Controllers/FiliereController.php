@@ -14,7 +14,8 @@ class FiliereController extends Controller
      */
     public function index()
     {
-        //
+        $filieres = Filiere::all();
+        return view("admin.pages.filieres.index")->with("filieres", $filieres);
     }
 
     /**
