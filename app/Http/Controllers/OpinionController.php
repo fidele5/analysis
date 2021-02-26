@@ -14,7 +14,8 @@ class OpinionController extends Controller
      */
     public function index()
     {
-        //
+        $sentiments = Opinion::all();
+        return view("admin.pages.opinions.index")->with("sentiments", $sentiments);
     }
 
     /**

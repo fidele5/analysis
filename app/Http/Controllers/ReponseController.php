@@ -14,7 +14,8 @@ class ReponseController extends Controller
      */
     public function index()
     {
-        //
+        $reponses = Reponse::all();
+        return view("admin.pages.reponses.index")->with("reponses", $reponses);
     }
 
     /**
