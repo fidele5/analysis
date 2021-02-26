@@ -1,4 +1,4 @@
-@extends('guest.layouts.layout')
+@extends('admin.layouts.layout')
 @section('content')
                 <div class="row layout-top-spacing" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
@@ -7,14 +7,12 @@
                                 <a href="{{ route("questionnaire.create") }}" class="btn btn-outline-primary mb-2">Ajouter</a>
                             </div>
                             <div class="table-responsive mb-4 mt-4">
-                                <table id="multi-column-ordering" class="table table-hover" style="width:100%">
+                                <table id="column-filter" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>id</th>
                                             <th>Designation</th>
                                             <th>Questions</th>
-                                            <th>Reponses</th>
-                                            <th>Sentiments</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -31,8 +29,6 @@
                                                 </td>
                                                 <td>{{ $questionnaire->designation }}</td>
                                                 <td>{{ count($questionnaire->questions) }}</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
                                                 <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -42,7 +38,7 @@
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                             <a class="dropdown-item" href="{{ route("questionnaire.show", $questionnaire->id) }}">View</a>
                                                             <a class="dropdown-item" href="{{ route("questionnaire.edit", $questionnaire->id) }}">Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                            <a class="dropdown-item" class="delete" method="DELETE" token="{{ csrf_token() }}" id="delete" href="{{ route("questionnaire.destroy", $questionnaire->id) }}">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -54,8 +50,6 @@
                                             <th>id</th>
                                             <th>Designation</th>
                                             <th>Questions</th>
-                                            <th>Reponses</th>
-                                            <th>Sentiments</th>
                                             <th>Actions</th>
                                         </tr>
                                     </tfoot>

@@ -153,6 +153,96 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+    $("#delete").click(function(e) {
+        e.preventDefault();
+        console.log("cliqued");
+        const swalWithBootstrapButtons = swal.mixin({
+            confirmButtonClass: 'btn btn-success btn-rounded',
+            cancelButtonClass: 'btn btn-danger btn-rounded mr-3',
+            buttonsStyling: false,
+        });
+
+        swalWithBootstrapButtons({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true,
+            padding: '2em'
+        }).then(function(result) {
+            if (result.value) {
+
+                $.ajax({
+
+                    type: 'POST',
+
+                    url: $(this).attr('href'),
+
+                    data: {
+                        _method: $(this).attr("method"),
+                        _token: $(this).attr("token"),
+                    },
+
+                    contentType: false,
+
+                    cache: false,
+
+                    processData: false,
+
+                    beforeSend: function() {
+
+                        $('button[type=submit]').attr('disabled', 'disabled').html("<span class='spinner-grow spinner-grow-sm' role='status' aria-hidden='true'></span>Loading...");
+
+                    },
+
+                    success: function(response) {
+
+                        if (response.status === "success") {
+                            swalWithBootstrapButtons(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+
+                            location.reload(true);
+                        } else {
+                            swalWithBootstrapButtons(
+                                'Cancelled',
+                                'Your imaginary file is safe :)',
+                                'error'
+                            );
+                        }
+
+                    },
+
+                    error: function(data) {
+
+                        swalWithBootstrapButtons(
+                            'Cancelled',
+                            'Your imaginary file is safe :)',
+                            'error'
+                        );
+
+                    }
+
+                });
+
+            } else if (result.dismiss === swal.DismissReason.cancel) {
+                swalWithBootstrapButtons(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+
+        });
+    });
+});
+
+
 
 
 
@@ -257,6 +347,7 @@ $(document).ready(function() {
             });
 
         }
+
 
     });
 

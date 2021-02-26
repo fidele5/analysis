@@ -38,12 +38,12 @@ class QuestionnaireController extends Controller
     public function store(Request $request)
     {
         Questionnaire::create([
-            "designation"=>$request->designation,
-            "user_id"=>Auth::user()->id,
+            "designation" => $request->designation,
+            "user_id" => Auth::user()->id,
         ]);
 
         return response()->json([
-            "status"=>"success", "back"=>"questionnaire"
+            "status" => "success", "back" => "questionnaire",
         ]);
     }
 
@@ -78,7 +78,10 @@ class QuestionnaireController extends Controller
      */
     public function update(Request $request, Questionnaire $questionnaire)
     {
-        //
+        $questionnaire->update($request->except("_token"));
+        return response()->json([
+            "status" => "success", "back" => "questionnaire",
+        ]);
     }
 
     /**
