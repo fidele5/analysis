@@ -55,7 +55,7 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        //
+        return view("admin.pages.questions.show")->with("question", $question);
     }
 
     /**
@@ -66,7 +66,9 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        //
+        $questionnaires = Questionnaire::all();
+        $rubriques = Rubrique::all();
+        return view("admin.pages.questions.edit")->with(compact("question", "questionnaires", "rubriques"));
     }
 
     /**
@@ -78,7 +80,11 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->update($request->except("_token"));
+        return response()->json([
+            "status" => "success", "back" => "question",
+        ]);
+
     }
 
     /**
@@ -89,6 +95,6 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        Question::destroy($question);
     }
 }
