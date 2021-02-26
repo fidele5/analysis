@@ -15,7 +15,7 @@ class QuestionnaireController extends Controller
     public function index()
     {
         $questionnaires = Questionnaire::all();
-        return view("admin.pages.questionnaires.index")->withQuestionnaires($questionnaires);
+        return view("admin.pages.questionnaires.index")->with("questionnaires", $questionnaires);
     }
 
     /**
@@ -25,7 +25,7 @@ class QuestionnaireController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.pages.questionnaires.create");
     }
 
     /**
@@ -47,7 +47,7 @@ class QuestionnaireController extends Controller
      */
     public function show(Questionnaire $questionnaire)
     {
-        //
+        return view("admin.pages.questionnaires.show")->with("questionnaire", $questionnaire);
     }
 
     /**
@@ -58,7 +58,7 @@ class QuestionnaireController extends Controller
      */
     public function edit(Questionnaire $questionnaire)
     {
-        //
+        return view("admin.pages.questionnaires.edit")->with("questionnaire", $questionnaire);
     }
 
     /**
