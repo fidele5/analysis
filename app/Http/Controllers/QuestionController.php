@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\Questionnaire;
+use App\Models\Rubrique;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -15,7 +17,7 @@ class QuestionController extends Controller
     public function index()
     {
         $questions = Question::all();
-        return view('admin.pages.questions.index')->withQuestions($questions);
+        return view('admin.pages.questions.index')->with("questions", $questions);
     }
 
     /**
@@ -25,7 +27,9 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        $questionnaires = Questionnaire::all();
+        $rubriques = Rubrique::all();
+        return view("admin.pages.questions.create")->with(compact("questionnaires", "rubriques"));
     }
 
     /**
@@ -36,7 +40,11 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Question::create($request->except("_token"));
+        return response()->json([
+            "status" => "success", "back" => "question",
+        ]);
+
     }
 
     /**

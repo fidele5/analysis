@@ -31,6 +31,7 @@
     <link href="/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
     <link href="/plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/plugins/editors/markdown/simplemde.min.css">
 
 </head>
 <body class="alt-menu sidebar-noneoverflow">

@@ -71,5 +71,8 @@
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
     <script src="/assets/js/components/notification/custom-snackbar.js"></script>
     <!--  END CUSTOM SCRIPTS FILE  -->
+
+    <script src="/plugins/editors/markdown/simplemde.min.js"></script>
+    <script src="/plugins/editors/markdown/custom-markdown.js"></script>
 </body>
 </html>
