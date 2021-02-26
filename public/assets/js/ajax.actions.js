@@ -154,7 +154,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    $("#delete").click(function(e) {
+    $(".delete").click(function(e) {
         e.preventDefault();
         console.log("cliqued");
         const swalWithBootstrapButtons = swal.mixin({
@@ -191,12 +191,6 @@ $(document).ready(function() {
                     cache: false,
 
                     processData: false,
-
-                    beforeSend: function() {
-
-                        $('button[type=submit]').attr('disabled', 'disabled').html("<span class='spinner-grow spinner-grow-sm' role='status' aria-hidden='true'></span>Loading...");
-
-                    },
 
                     success: function(response) {
 
@@ -235,7 +229,7 @@ $(document).ready(function() {
                     'Cancelled',
                     'Your imaginary file is safe :)',
                     'error'
-                )
+                );
             }
 
         });

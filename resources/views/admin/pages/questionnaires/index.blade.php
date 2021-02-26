@@ -38,7 +38,7 @@
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                             <a class="dropdown-item" href="{{ route("questionnaire.show", $questionnaire->id) }}">View</a>
                                                             <a class="dropdown-item" href="{{ route("questionnaire.edit", $questionnaire->id) }}">Edit</a>
-                                                            <a class="dropdown-item" class="delete" method="DELETE" token="{{ csrf_token() }}" id="delete" href="{{ route("questionnaire.destroy", $questionnaire->id) }}">Delete</a>
+                                                            <a class="dropdown-item delete" method="DELETE" token="{{ csrf_token() }}" id="delete" href="{{ route("questionnaire.destroy", $questionnaire->id) }}">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
