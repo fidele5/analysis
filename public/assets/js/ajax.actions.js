@@ -150,6 +150,21 @@ $(document).ready(function() {
 
     });
 
+    $("#plus").click(function(e) {
+        e.preventDefault();
+        console.log('click');
+        $('.parent').show();
+        var field = $("#champ").html();
+
+        $(".parent").append(field);
+
+        var size = $(".field").length;
+
+        if (size >= 5) {
+            $(this).attr("disabled", "disabled");
+        }
+    });
+
 });
 
 

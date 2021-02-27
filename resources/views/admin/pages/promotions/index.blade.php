@@ -3,6 +3,9 @@
                 <div class="row layout-top-spacing" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
+                            <div class="text-center">
+                                <a href="{{ route("promotion.create") }}" class="btn btn-outline-primary mb-2">Ajouter</a>
+                            </div>
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="column-filter" class="table table-hover" style="width:100%">
                                     <thead>
@@ -28,10 +31,9 @@
                                                         </a>
 
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                            <a class="dropdown-item" href="javascript:void(0);">View</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);">View Response</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                            <a class="dropdown-item" href="{{ route("promotion.show", $promotion) }}">View</a>
+                                                            <a class="dropdown-item" href="{{ route("promotion.edit", $promotion) }}">Edit</a>
+                                                            <a class="dropdown-item delete" method="DELETE" token="{{ csrf_method() }}"  href="{{ route("promotion.destroy", $promotion) }}">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>

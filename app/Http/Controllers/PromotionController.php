@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Filiere;
 use App\Models\Promotion;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        //
+        $filieres = Filiere::all();
+        return view("admin.pages.promotions.create")->with("filieres", $filieres);
     }
 
     /**
@@ -36,7 +38,10 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Promotion::create($request->except("_token"));
+        return response()->json([
+            "status" => "success", "back" => "../promotion",
+        ]);
     }
 
     /**
@@ -47,7 +52,7 @@ class PromotionController extends Controller
      */
     public function show(Promotion $promotion)
     {
-        //
+        return view("admin.pages.promotions.show")->with("promotion", $promotion);
     }
 
     /**
@@ -58,7 +63,8 @@ class PromotionController extends Controller
      */
     public function edit(Promotion $promotion)
     {
-        //
+        $filieres = Filiere::all();
+        return view("admin.pages.promotions.edit")->with(compact("filieres", "promotion"));
     }
 
     /**
@@ -70,7 +76,11 @@ class PromotionController extends Controller
      */
     public function update(Request $request, Promotion $promotion)
     {
-        //
+        $promotion->update($request->except("_token"));
+        return response()->json([
+            "status" => "success", "back" => "../promotion",
+        ]);
+
     }
 
     /**
@@ -81,6 +91,6 @@ class PromotionController extends Controller
      */
     public function destroy(Promotion $promotion)
     {
-        //
+        Promotion::destroy($promotion);
     }
 }

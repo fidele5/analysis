@@ -40,10 +40,11 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        Question::create($request->except("_token"));
-        return response()->json([
-            "status" => "success", "back" => "question",
-        ]);
+        dd($request);
+        // Question::create($request->except("_token"));
+        // return response()->json([
+        //     "status" => "success", "back" => "question",
+        // ]);
 
     }
 

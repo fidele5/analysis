@@ -25,7 +25,7 @@ class RubriqueController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.pages.rubriques.create");
     }
 
     /**
@@ -36,7 +36,11 @@ class RubriqueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Rubrique::create($request->except("_token"));
+        return response()->json([
+            "status" => "success",
+            "back" => "rubrique",
+        ]);
     }
 
     /**
@@ -58,7 +62,7 @@ class RubriqueController extends Controller
      */
     public function edit(Rubrique $rubrique)
     {
-        //
+        return view("admin.pages.rubriques.edit")->with("rubrique", $rubrique);
     }
 
     /**
@@ -70,7 +74,12 @@ class RubriqueController extends Controller
      */
     public function update(Request $request, Rubrique $rubrique)
     {
-        //
+        $rubrique->update($request->except("_token"));
+        return response()->json([
+            "status" => "success",
+            "back" => "../rubrique",
+        ]);
+
     }
 
     /**
