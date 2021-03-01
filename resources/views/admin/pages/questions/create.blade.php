@@ -39,9 +39,9 @@
 
 
                                         <div class="form-group row mb-4">
-                                            <label for="hEmail" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Designation</label>
+                                            <label for="hEmail" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Enoncé</label>
                                             <div class="col-xl-8 col-lg-6 col-sm-8">
-                                                <textarea id="demo1" name="enonce"></textarea>
+                                                <textarea class="form-control" name="enonce" placeholder="Enoncé"></textarea>
                                             </div>
                                         </div>
 
@@ -49,11 +49,10 @@
                                             <div class="form-group mb-4" id="champ">
                                                 <label for="hAssertions" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Assertions</label>
                                                 <div class="col-xl-8 col-lg-6 col-sm-8 field">
-                                                    <input type="text" class="form-control champ perfecto" name="designation" id="Assertions" placeholder="Designation">
+                                                    <input type="text" class="form-control assertion" id="Assertions" placeholder="Designation">
                                                 </div>
                                             </div>
                                         </div>
-
 
                                         <div class="form-group row">
                                             <div class="col-sm-10">

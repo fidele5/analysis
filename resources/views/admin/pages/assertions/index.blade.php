@@ -21,11 +21,11 @@
                                                         <div class="usr-img-frame mr-2 rounded-circle">
                                                             <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
                                                         </div>
-                                                        <p class="align-self-center mb-0 admin-name"> Tiger </p>
+                                                        <p class="align-self-center mb-0 admin-name"> {{ $assertion->id }} </p>
                                                     </div>
                                                 </td>
-                                                <td>System Architect</td>
-                                                <td>System Architect</td>
+                                                <td class="text-truncate" style="max-width: 150px">{{ $assertion->texte }}</td>
+                                                <td class="text-truncate" style="max-width: 150px">{{ $assertion->question->enonce }}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

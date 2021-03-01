@@ -15,6 +15,7 @@
                                             <th>Questionnaire</th>
                                             <th>Rubrique</th>
                                             <th>Reponses</th>
+                                            <th>Assertions</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -26,6 +27,7 @@
                                                 <td>{{ $question->questionnaire->designation }}</td>
                                                 <td>{{ $question->rubrique->designation }}</td>
                                                 <td>{{ count($question->reponses) }}</td>
+                                                <td>{{ count($question->assertions) }}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -50,6 +52,7 @@
                                             <th>Questionnaire</th>
                                             <th>Rubrique</th>
                                             <th>Reponses</th>
+                                            <th>Assertions</th>
                                             <th>Actions</th>
                                         </tr>
                                     </tfoot>

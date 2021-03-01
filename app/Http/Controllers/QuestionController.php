@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assertion;
 use App\Models\Question;
 use App\Models\Questionnaire;
 use App\Models\Rubrique;
@@ -40,11 +41,31 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        // Question::create($request->except("_token"));
-        // return response()->json([
-        //     "status" => "success", "back" => "question",
-        // ]);
+        if (isset($request->assertions)) {
+            $question = Question::create([
+                "questionnaire_id" => $request->questionnaire_id,
+                "rubrique_id" => $request->rubrique_id,
+                "enonce" => $request->enonce,
+            ]);
+            $assertions = explode(",", $request->assertions);
+            foreach ($assertions as $value) {
+                Assertion::create([
+                    "texte" => $value,
+                    "question_id" => $question->id,
+                ]);
+            }
+        } else {
+            $question = Question::create([
+                "questionnaire_id" => $request->questionnaire_id,
+                "rubrique_id" => $request->rubrique_id,
+                "enonce" => $request->enonce,
+            ]);
+
+        }
+
+        return response()->json([
+            "status" => "success", "back" => "question",
+        ]);
 
     }
 

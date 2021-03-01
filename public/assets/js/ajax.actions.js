@@ -252,9 +252,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
 $(document).ready(function() {
 
     $("form").submit(function(e) {
@@ -264,6 +261,19 @@ $(document).ready(function() {
         $('.champ + label +div').text('');
 
         $('.champ').removeClass('is-invalid');
+
+        var assertions = [];
+
+        var formdata = new FormData(this);
+
+        $(".assertion").each(function(index, element) {
+            assertions.push(
+                $(this).val()
+            );
+        });
+
+        formdata.append("assertions", assertions);
+        console.log(formdata);
 
         var fields = [];
 
@@ -283,10 +293,7 @@ $(document).ready(function() {
 
         });
 
-
-
         if (errors > 0) {
-
 
             Snackbar.show({
                 text: 'Veuillez completer tous les champs',
@@ -298,17 +305,13 @@ $(document).ready(function() {
 
         } else {
 
-            var fd = new FormData();
-
-            console.log(fd);
-
             $.ajax({
 
                 type: $(this).attr('method'),
 
                 url: $(this).attr('action'),
 
-                data: new FormData(this),
+                data: formdata,
 
                 contentType: false,
 

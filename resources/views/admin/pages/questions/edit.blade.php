@@ -40,7 +40,7 @@
                                         <div class="form-group row mb-4">
                                             <label for="hEmail" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Designation</label>
                                             <div class="col-xl-8 col-lg-6 col-sm-8">
-                                                <textarea id="demo1" name="enonce">{{ $question->enonce }}</textarea>
+                                                <textarea class="form-control" name="enonce" placeholder="Enoncé">{{ $question->enonce }}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row">
