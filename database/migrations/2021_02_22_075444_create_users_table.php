@@ -18,13 +18,14 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('role')->default(1);
             $table->string('password');
             $table->unsignedBigInteger('promotion_id');
             $table->rememberToken();
             $table->timestamps();
         });
 
-        Schema::table('users', function (Blueprint $table){
+        Schema::table('users', function (Blueprint $table) {
             $table->foreign('promotion_id')->references('id')->on('promotions')->cascadeOnDelete();
         });
     }
